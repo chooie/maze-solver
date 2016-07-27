@@ -57,6 +57,14 @@ _:x_ in the start, the path, and the end of the maze, like this:
     java -jar target/tiny-maze-0.1.0-SNAPSHOT-standalone.jar "[[:S 0 1][1 0 1][1 0 :E]]"
     ```
 
+    ```clojure
+    ;; =>
+    
+    [[:x :x 1]
+    [1  :x 1]
+    [1  :x :x]]
+    ```
+
 ## Note
 
 This application aims to solve the tiny-maze challenge posed by Carin Meier in her
