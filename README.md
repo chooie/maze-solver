@@ -28,7 +28,7 @@ _:x_ in the start, the path, and the end of the maze, like this:
 
 - Clone or fork this repo
 
-- Install Leiningen
+- Install [Leiningen](http://leiningen.org/)
     * ### Mac OSX
     
       ```shell
