@@ -58,5 +58,7 @@
 (defn -main [maze-string]
   (let [maze-structure (read-string maze-string)]
     (println "Solving Maze...\n")
-    (println (solve-maze maze-structure))))
+    (let [solved-maze (solve-maze maze-structure)]
+      (doseq [row solved-maze]
+        (println row)))))
 
