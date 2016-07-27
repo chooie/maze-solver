@@ -5,4 +5,5 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/tools.namespace "0.2.11"]]
-  :main tiny-maze.solver)
+  :main tiny-maze.solver
+  :aot [tiny-maze.solver])

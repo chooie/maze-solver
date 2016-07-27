@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+
+</head>
+
+<body>
+
+<h1 id="maze-solver">maze-solver</h1>
+
+<p>This is a square maze solver.</p>
+
+<p>A maze is represented by a matrix like:</p>
+
+<pre><code class="clojure">[[:S 0 1]
+ [1  0 1]
+ [1  0 :E]]
+</code></pre>
+
+<ul>
+<li><em>S</em> : start of the maze</li>
+<li><em>E</em> : end of the maze</li>
+<li><em>1</em> : This is a wall that you cannot pass through</li>
+<li><em>0</em> : A free space that you can move through.</li>
+</ul>
+
+<p>The goal is the get to the end of the maze. A solved maze will have a
+<em>:x</em> in the start, the path, and the end of the maze, like this:</p>
+
+<pre><code class="clojure">[[:x :x 1]
+ [1  :x 1]
+ [1  :x :x]]
+</code></pre>
+
+<h2 id="instructions">Instructions</h2>
+
+<ul>
+<li><p>Clone or fork this repo</p></li>
+<li>Install Leiningen
+
+<ul>
+<li><h3 id="macosx">Mac OSX</h3></li>
+</ul>
+
+<pre><code class="shell">  brew install leiningen
+</code></pre>
+
+<ul>
+<li><h3 id="unix">UNIX</h3></li>
+</ul>
+
+<pre><code class="shell">  wget https://raw.github.com/technomancy/leiningen/stable/bin/lein
+  chmod +x lein
+  mv lein ~/bin
+  lein
+</code></pre></li>
+<li><p>Run the tests with <code>lein test</code></p></li>
+<li><p>Prepare the application</p>
+
+<pre><code class="shell">lein uberjar
+</code></pre></li>
+<li><p>Run the application with a maze</p>
+
+<pre><code class="shell">java -jar target/tiny-maze-0.1.0-SNAPSHOT-standalone.jar &quot;[[:S 0 1][1 0 1][1 0 :E]]&quot;
+</code></pre></li>
+</ul>
+
+<h2 id="note">Note</h2>
+
+<p>This application aims to solve the tiny-maze challenge posed by Carin Meier in her
+<a href="https://github.com/gigasquid/wonderland-clojure-katas">wonderland-clojure-katas</a>.</p>
+
+<h2 id="license">License</h2>
+
+<p>Copyright © 2016 Charlie Hebert</p>
+
+<p>Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.</p>
+
+</body>
+</html>

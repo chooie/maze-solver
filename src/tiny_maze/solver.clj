@@ -1,6 +1,7 @@
 (ns tiny-maze.solver
   (:require [tiny-maze.maze-structure :as m-s]
-            [tiny-maze.maze-exploration :as m-e]))
+            [tiny-maze.maze-exploration :as m-e])
+  (:gen-class))
 
 (declare solve-maze)
 
@@ -53,3 +54,9 @@
   (let [shortest-solved-tree (get-best-maze-solution-path maze)
         best-solved-maze (last shortest-solved-tree)]
     best-solved-maze))
+
+(defn -main [maze-string]
+  (let [maze-structure (read-string maze-string)]
+    (println "Solving Maze...\n")
+    (println (solve-maze maze-structure))))
+

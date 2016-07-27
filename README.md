@@ -29,7 +29,7 @@ _:x_ in the start, the path, and the end of the maze, like this:
 - Clone or fork this repo
 
 - Install Leiningen
-    * ### Mac OS
+    * ### Mac OSX
     
       ```shell
       brew install leiningen
@@ -45,6 +45,17 @@ _:x_ in the start, the path, and the end of the maze, like this:
       ```
 
 - Run the tests with `lein test`
+- Prepare the application
+
+    ```shell
+    lein uberjar
+    ```
+
+- Run the application with a maze
+
+    ```shell
+    java -jar target/tiny-maze-0.1.0-SNAPSHOT-standalone.jar "[[:S 0 1][1 0 1][1 0 :E]]"
+    ```
 
 ## Note
 
