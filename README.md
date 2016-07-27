@@ -60,9 +60,9 @@ _:x_ in the start, the path, and the end of the maze, like this:
     ```clojure
     ;; =>
     
-    [[:x :x 1]
+    [:x :x 1]
     [1  :x 1]
-    [1  :x :x]]
+    [1  :x :x]
     ```
 
 ## Note
