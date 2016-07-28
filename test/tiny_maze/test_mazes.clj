@@ -77,6 +77,12 @@
    [w _ t w]
    [w w t t]])
 
+(def problem-maze-4-by-4
+  [[s _ w w]
+   [1 _ _ w]
+   [1 _ 1 e]
+   [1 1 1 1]])
+
 (def start-maze-looped
   [[s _ _ _ _]
    [w _ w w _]

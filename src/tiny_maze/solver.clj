@@ -32,13 +32,15 @@
 
 (defn get-shortest-solution
   [solutions]
-  (let [solution-counts   (mapv count solutions)
-        shortest-count    (apply min solution-counts)
-        smallest-solution (first (filter (fn [solution]
-                                           (= shortest-count
-                                              (count solution)))
-                                         solutions))]
-    smallest-solution))
+  (if (not-empty solutions)
+    (let [solution-counts   (mapv count solutions)
+          shortest-count    (apply min solution-counts)
+          smallest-solution (first (filter (fn [solution]
+                                             (= shortest-count
+                                                (count solution)))
+                                           solutions))]
+      smallest-solution)
+    []))
 
 (defn get-best-maze-solution-path
   [maze]
@@ -57,8 +59,14 @@
 
 (defn -main [maze-string]
   (let [maze-structure (read-string maze-string)]
-    (println "Solving Maze...\n")
-    (let [solved-maze (solve-maze maze-structure)]
-      (doseq [row solved-maze]
-        (println row)))))
+    (do
+      (println "Solving Maze:\n")
+      (doseq [row maze-structure]
+        (println row))
+      (let [solved-maze (solve-maze maze-structure)]
+        (if solved-maze
+          (do (println "\nSolution:\n")
+              (doseq [row solved-maze]
+                (println row)))
+          (println "\nNo solution available"))))))
 
